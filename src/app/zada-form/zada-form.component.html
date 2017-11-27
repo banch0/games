@@ -1,0 +1,4 @@
+<form class="zada-form" (ngSubmit)="onSubmit(); zadaForm.reset()" #zadaForm="ngForm">
+    <input type="text" name="title" [(ngModel)]="title" placeholder="What do I do" required>
+    <button type="submit" [disabled]="zadaForm.form.invalid">Do it</button>
+  </form>

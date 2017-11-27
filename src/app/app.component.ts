@@ -1,8 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Http } from '@angular/http';
 import {MatCardModule} from '@angular/material/card';
+import { Zada } from './shared/zada';
+import { zadacha } from './shared/data';
 
 import 'rxjs/add/operator/map';
+
+
 
 @Component({
   selector: 'app-root',
@@ -22,10 +26,14 @@ export class AppComponent {
     {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
     {text: 'Five', cols: 4, rows: 1, color: '#DDBDF1'}
   ];
+  zadacha: Zada[] = zadacha;
+  create(title: string){
+    const zada = new Zada (title);
+    this.zadacha.push(zada);
+  }
   
   
   
-
   constructor(/*private http:Http*/) {
     this.intervalld = setInterval(() => this.tick(), 1000);
     

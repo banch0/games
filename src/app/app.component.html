@@ -41,6 +41,9 @@
                   </mat-card-actions>
                 </mat-card>
           </div>
+          <app-zada-form (add)="create($event)"></app-zada-form>
+          <app-zada-list [zadacha]="zadacha"></app-zada-list>
+          
 
           <mat-grid-list cols="4" rowHeight="100px">
               <mat-grid-tile

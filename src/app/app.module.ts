@@ -11,7 +11,7 @@ import {MatCardModule} from '@angular/material/card';
 import {HttpModule} from '@angular/http';
 // import {HttpClientModule } from '@angular/common/http';
 // import { HttpClient } from '@angular/common/http';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { AppComponent } from './app.component';
 import { ThemComponent } from './them/them.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -19,8 +19,13 @@ import { FooterComponent } from './footer/footer.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import {MatChipsModule} from '@angular/material/chips'; 
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatChipsModule } from '@angular/material/chips'; 
+import { MatGridListModule } from '@angular/material/grid-list';
+import { FormsModule } from '@angular/forms';
+import { ZadaFormComponent } from './zada-form/zada-form.component';
+import { ZadaListComponent } from './zada-list/zada-list.component';
+import { ZadaItemComponent } from './zada-item/zada-item.component';
+import { ZadachService } from './zadach.service';
 
 
 
@@ -29,16 +34,19 @@ import {MatGridListModule} from '@angular/material/grid-list';
     AppComponent,
     ThemComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ZadaFormComponent,
+    ZadaListComponent,
+    ZadaItemComponent
   ],
   imports: [
-    BrowserModule, MatChipsModule,
+    BrowserModule, MatChipsModule, FormsModule,
     HttpModule,MatProgressSpinnerModule,MatCheckboxModule,MatButtonToggleModule,MatExpansionModule,
     // HttpClientModule, 
     // HttpClient,
     MatCardModule,MatMenuModule,MatGridListModule,MatButtonModule, MatIconModule, MatSidenavModule,BrowserAnimationsModule,MatToolbarModule
   ],
-  providers: [ ],
+  providers: [ ZadachService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
