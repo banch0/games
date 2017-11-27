@@ -9,9 +9,10 @@ import {Zada } from '../shared/zada';
 export class ZadaItemComponent implements OnInit {
   @Input() zada: Zada;
   @Output() delete = new EventEmitter();
+  @Output() toggle = new EventEmitter();
 
-  toggle(){
-    this.zada.completed = !this.zada.completed;
+  onToggle(){
+    this.toggle.emit(this.zada);
   }
   onDelete(){
     this.delete.emit(this.zada);

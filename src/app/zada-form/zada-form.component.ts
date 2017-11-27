@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ZadachService } from '../zadach.service'
 
 @Component({
   selector: 'app-zada-form',
@@ -8,13 +9,13 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class ZadaFormComponent implements OnInit {
 
   title:string = '';
-  @Output() add = new EventEmitter();
+
 
   onSubmit(){
-    this.add.emit(this.title);
+    this.zadachService.createZadach(this.title);
    }
 
-  constructor() { }
+  constructor(private zadachService: ZadachService) { }
 
   ngOnInit() {
   }

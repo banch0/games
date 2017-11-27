@@ -1,16 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 
 import { NgModule } from '@angular/core';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatMenuModule} from '@angular/material/menu';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatCardModule} from '@angular/material/card';
-import {HttpModule} from '@angular/http';
-// import {HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
+import { HttpModule } from '@angular/http';
+// import { HttpClientModule } from '@angular/common/http';
 // import { HttpClient } from '@angular/common/http';
+
+import { InMemoryWebApiModule, InMemoryDbService } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './shared/date.service';
+
 import { MatExpansionModule } from '@angular/material/expansion';
 import { AppComponent } from './app.component';
 import { ThemComponent } from './them/them.component';
@@ -41,12 +45,12 @@ import { ZadachService } from './zadach.service';
   ],
   imports: [
     BrowserModule, MatChipsModule, FormsModule,
-    HttpModule,MatProgressSpinnerModule,MatCheckboxModule,MatButtonToggleModule,MatExpansionModule,
+    HttpModule, InMemoryWebApiModule.forRoot(InMemoryDataService) ,MatProgressSpinnerModule,MatCheckboxModule,MatButtonToggleModule,MatExpansionModule,
     // HttpClientModule, 
     // HttpClient,
     MatCardModule,MatMenuModule,MatGridListModule,MatButtonModule, MatIconModule, MatSidenavModule,BrowserAnimationsModule,MatToolbarModule
   ],
-  providers: [ ZadachService ],
+  providers: [ ZadachService, InMemoryDataService  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

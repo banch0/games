@@ -1,5 +1,5 @@
 <div class="zadacha-item" [class.completed]="zada.completed">
-    <button class="checkbox icon" (click)="toggle()">
+    <button class="checkbox icon" (click)="onToggle()">
       <i class="material-icons">{{ zada.completed ? 'check_box' : 'check_box_outline_blank' }}</i>
     </button>
        <span class="title">{{ zada.title }}</span>

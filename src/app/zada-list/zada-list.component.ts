@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {Zada } from '../shared/zada';
 import { ZadachService } from '../zadach.service'
+
 
 
 @Component({
@@ -10,24 +11,21 @@ import { ZadachService } from '../zadach.service'
 })
 export class ZadaListComponent implements OnInit {
 
-  @Input() zadacha: Zada[];
-
-  toggle(zada:Zada){
-    zada.completed =!zada.completed;
-  }
-  delete(zada:Zada){
-    let index = this.zadacha.indexOf(zada);
-
-    if(index > -1){
-      this.zadacha.splice(index, 1)
-    }
-  }
+  zadacha: Zada[];
 
   constructor(private zadachService: ZadachService) {
     this.zadacha = [];
    }
 
+  toggle(zada:Zada){
+    this.zadachService.toggleZadach(zada)
+  }
+  delete(zada:Zada){
+    this.zadachService.deleteZadach(zada);
+  }
+
   ngOnInit() {
+    this.zadachService.getZadacha().then(zadacha => this.zadacha = zadacha);
   }
 
 }
