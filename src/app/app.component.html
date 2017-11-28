@@ -41,11 +41,10 @@
                   </mat-card-actions>
                 </mat-card>
           </div>
-          <app-zada-form></app-zada-form>
-          <app-zada-list></app-zada-list>
+          <app-zadachi></app-zadachi>
           
 
-          <mat-grid-list cols="4" rowHeight="100px">
+          <!-- <mat-grid-list cols="4" rowHeight="100px">
               <mat-grid-tile
                   *ngFor="let tile of tiles"
                   [colspan]="tile.cols"
@@ -53,7 +52,7 @@
                   [style.background]="tile.color">
                 {{tile.text}}
               </mat-grid-tile>
-            </mat-grid-list>
+            </mat-grid-list> -->
 
   
       </mat-sidenav-container>
@@ -127,7 +126,7 @@
           </mat-expansion-panel>
         
         </mat-accordion> -->
-        <mat-grid-list cols="4" rowHeight="100px">
+        <!-- <mat-grid-list cols="4" rowHeight="100px">
             <mat-grid-tile
                 *ngFor="let tile of tiles"
                 [colspan]="tile.cols"
@@ -135,7 +134,7 @@
                 [style.background]="tile.color">
               {{tile.text}}
             </mat-grid-tile>
-          </mat-grid-list>
+          </mat-grid-list> -->
       <app-them></app-them>
       <!-- <mat-card class="example-card" *ngFor="let data of (myData ? myData.slice(0,10): []); let i = index">
           <img mat-card-image src="{{ data.url }}">

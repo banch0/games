@@ -1,0 +1,3 @@
+<div class="zadacha-list" *ngIf="zada.length">
+    <app-zada-item *ngFor="let zada of zadacha" [zada]="zada" (delete)="onDelete($event)" (toggle)="onToggle($event)"></app-zada-item>
+  </div>
